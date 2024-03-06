@@ -9,8 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class UserRepository {
-//    private final ConcurrentHashMap<User, List<Authorities>> userAuthorities = new ConcurrentHashMap<>();
-    public List<Authorities> getUserAuthorities(String user, String password) {
-        return null;
+    private final ConcurrentHashMap<User, List<Authorities>> userAuthorities = new ConcurrentHashMap<>();
+    public List<Authorities> getUserAuthorities(User user) {
+        return userAuthorities.get(user);
     }
 }
