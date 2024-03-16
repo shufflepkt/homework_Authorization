@@ -12,6 +12,7 @@ http {
 
         location /signin {
             alias /Users/yuryshakhmatov/IdeaProjects/homework_Authorization/src/main/resources/static;
+            try_files /auth.html =404;
         }
     }
 }
