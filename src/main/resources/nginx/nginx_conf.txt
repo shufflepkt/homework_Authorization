@@ -7,12 +7,20 @@ events {
 http {
     include       mime.types;
 
+    upstream backendserver {
+        server localhost:8080;
+    }
+
     server {
         listen       80;
 
         location /signin {
             alias /Users/yuryshakhmatov/IdeaProjects/homework_Authorization/src/main/resources/static;
             try_files /auth.html =404;
+        }
+
+        location / {
+            proxy_pass http://backendserver/;
         }
     }
 }
