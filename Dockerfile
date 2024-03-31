@@ -1,4 +1,4 @@
-FROM classmethod/openjdk-alpine-git:latest
+FROM rsunix/yourkit-openjdk17
 
 EXPOSE 8080
 
